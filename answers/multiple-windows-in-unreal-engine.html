@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>How to Open a Second Window in Unreal Engine (and Why Blueprint Can&#x27;t)</title>
 <meta name="description" content="Unreal renders one viewport per window. A second window needs a second GameViewportClient in C++ — here are the built-in options and what each one actually gives you.">
-<link rel="canonical" href="https://yehaike.github.io/answers/multiple-windows-in-unreal-engine.html">
+<link rel="canonical" href="https://yehaike2025.github.io/answers/multiple-windows-in-unreal-engine.html">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Open a Second Window in Unreal Engine (and Why Blueprint Can&#x27;t)">
 <meta property="og:description" content="Unreal renders one viewport per window. A second window needs a second GameViewportClient in C++ — here are the built-in options and what each one actually gives you.">
-<meta property="og:url" content="https://yehaike.github.io/answers/multiple-windows-in-unreal-engine.html">
+<meta property="og:url" content="https://yehaike2025.github.io/answers/multiple-windows-in-unreal-engine.html">
 <meta property="og:site_name" content="YeHaike">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" type="text/plain" href="https://yehaike.github.io/llms.txt" title="llms.txt">
+<link rel="alternate" type="text/plain" href="https://yehaike2025.github.io/llms.txt" title="llms.txt">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -89,7 +89,7 @@ footer a:hover{color:var(--accent)}
   th,td{padding:8px 8px 8px 0}
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike.github.io/answers/multiple-windows-in-unreal-engine.html#faq","mainEntity":[{"@type":"Question","name":"Can I open a second window in Blueprint only?","acceptedAnswer":{"@type":"Answer","text":"No. There is no Blueprint node that creates a game window. Every route - C++, nDisplay or a plugin - ultimately creates an additional viewport client in native code."}},{"@type":"Question","name":"Does the editor's “New Editor Window” help?","acceptedAnswer":{"@type":"Answer","text":"Only inside the editor. It cannot be used in a packaged build, so it is not a shipping solution."}},{"@type":"Question","name":"Does a second window mean a second copy of the game?","acceptedAnswer":{"@type":"Answer","text":"No, if it is implemented as an additional viewport in the same process. Both windows share one game state, which is the entire reason to do it this way instead of adding a second PC."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike2025.github.io/answers/multiple-windows-in-unreal-engine.html#faq","mainEntity":[{"@type":"Question","name":"Can I open a second window in Blueprint only?","acceptedAnswer":{"@type":"Answer","text":"No. There is no Blueprint node that creates a game window. Every route - C++, nDisplay or a plugin - ultimately creates an additional viewport client in native code."}},{"@type":"Question","name":"Does the editor's “New Editor Window” help?","acceptedAnswer":{"@type":"Answer","text":"Only inside the editor. It cannot be used in a packaged build, so it is not a shipping solution."}},{"@type":"Question","name":"Does a second window mean a second copy of the game?","acceptedAnswer":{"@type":"Answer","text":"No, if it is implemented as an additional viewport in the same process. Both windows share one game state, which is the entire reason to do it this way instead of adding a second PC."}}]}</script>
 </head>
 <body>
 <header><div class="wrap">
@@ -112,7 +112,7 @@ footer a:hover{color:var(--accent)}
 <footer><div class="wrap">
 <p><strong>YeHaike</strong> &mdash; Unreal Engine plugins for data, networking, displays and local multiplayer. Based in China.
 Unreal Engine is a trademark of Epic Games. These plugins are not made by Epic Games.</p>
-<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike.github.io/llms.txt">llms.txt</a> &middot;
+<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike2025.github.io/llms.txt">llms.txt</a> &middot;
 <a href="../index.html">All plugins</a></p>
 </div></footer>
 </body>

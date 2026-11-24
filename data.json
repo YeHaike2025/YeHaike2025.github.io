@@ -1,6 +1,6 @@
 {
   "_readme": "改这里，然后跑 python tools/build_geo_site.py。fab 字段填你的 listing 链接（在 Fab 后台商品页复制）。versions 字段请照你自己 listing 上实际勾选的版本核对。",
-  "base_url": "https://yehaike.github.io",
+  "base_url": "https://yehaike2025.github.io",
   "brand": {
     "name": "YeHaike",
     "tagline": "Unreal Engine plugins for data, networking, displays and local multiplayer",

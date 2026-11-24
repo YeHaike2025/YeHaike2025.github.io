@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HTTP Requests from Blueprint in Unreal Engine: There Is No Native Node</title>
 <meta name="description" content="Blueprint has no HTTP node and FHttpModule is C++ only. Here is the C++ route, when a plugin is the better trade, and the pitfalls of both.">
-<link rel="canonical" href="https://yehaike.github.io/answers/http-request-in-unreal-blueprint.html">
+<link rel="canonical" href="https://yehaike2025.github.io/answers/http-request-in-unreal-blueprint.html">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP Requests from Blueprint in Unreal Engine: There Is No Native Node">
 <meta property="og:description" content="Blueprint has no HTTP node and FHttpModule is C++ only. Here is the C++ route, when a plugin is the better trade, and the pitfalls of both.">
-<meta property="og:url" content="https://yehaike.github.io/answers/http-request-in-unreal-blueprint.html">
+<meta property="og:url" content="https://yehaike2025.github.io/answers/http-request-in-unreal-blueprint.html">
 <meta property="og:site_name" content="YeHaike">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" type="text/plain" href="https://yehaike.github.io/llms.txt" title="llms.txt">
+<link rel="alternate" type="text/plain" href="https://yehaike2025.github.io/llms.txt" title="llms.txt">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -89,7 +89,7 @@ footer a:hover{color:var(--accent)}
   th,td{padding:8px 8px 8px 0}
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike.github.io/answers/http-request-in-unreal-blueprint.html#faq","mainEntity":[{"@type":"Question","name":"Is there a built-in Blueprint node for HTTP?","acceptedAnswer":{"@type":"Answer","text":"No. Unreal ships no Blueprint-exposed HTTP client; the functionality exists only in C++ through FHttpModule."}},{"@type":"Question","name":"Can I call a REST API from Blueprint without C++?","acceptedAnswer":{"@type":"Answer","text":"Only with a plugin. Some are free, some are paid; check that they support your engine version before relying on one."}},{"@type":"Question","name":"Will an HTTP request freeze my game?","acceptedAnswer":{"@type":"Answer","text":"A correctly written one will not - the engine's client is asynchronous. Freezes come from waiting on the result synchronously, which is a code problem rather than an engine one."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike2025.github.io/answers/http-request-in-unreal-blueprint.html#faq","mainEntity":[{"@type":"Question","name":"Is there a built-in Blueprint node for HTTP?","acceptedAnswer":{"@type":"Answer","text":"No. Unreal ships no Blueprint-exposed HTTP client; the functionality exists only in C++ through FHttpModule."}},{"@type":"Question","name":"Can I call a REST API from Blueprint without C++?","acceptedAnswer":{"@type":"Answer","text":"Only with a plugin. Some are free, some are paid; check that they support your engine version before relying on one."}},{"@type":"Question","name":"Will an HTTP request freeze my game?","acceptedAnswer":{"@type":"Answer","text":"A correctly written one will not - the engine's client is asynchronous. Freezes come from waiting on the result synchronously, which is a code problem rather than an engine one."}}]}</script>
 </head>
 <body>
 <header><div class="wrap">
@@ -112,7 +112,7 @@ footer a:hover{color:var(--accent)}
 <footer><div class="wrap">
 <p><strong>YeHaike</strong> &mdash; Unreal Engine plugins for data, networking, displays and local multiplayer. Based in China.
 Unreal Engine is a trademark of Epic Games. These plugins are not made by Epic Games.</p>
-<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike.github.io/llms.txt">llms.txt</a> &middot;
+<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike2025.github.io/llms.txt">llms.txt</a> &middot;
 <a href="../index.html">All plugins</a></p>
 </div></footer>
 </body>

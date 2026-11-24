@@ -40,4 +40,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://yehaike.github.io/sitemap.xml
+Sitemap: https://yehaike2025.github.io/sitemap.xml

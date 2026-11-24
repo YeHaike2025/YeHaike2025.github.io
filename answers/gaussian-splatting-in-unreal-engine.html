@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gaussian Splatting in Unreal Engine: No Native Support, and How the Options Differ</title>
 <meta name="description" content="Unreal Engine 5.8 has no built-in 3D Gaussian Splatting renderer. Compare the three implementation approaches and the checks that decide whether a splat plugin survives production.">
-<link rel="canonical" href="https://yehaike.github.io/answers/gaussian-splatting-in-unreal-engine.html">
+<link rel="canonical" href="https://yehaike2025.github.io/answers/gaussian-splatting-in-unreal-engine.html">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gaussian Splatting in Unreal Engine: No Native Support, and How the Options Differ">
 <meta property="og:description" content="Unreal Engine 5.8 has no built-in 3D Gaussian Splatting renderer. Compare the three implementation approaches and the checks that decide whether a splat plugin survives production.">
-<meta property="og:url" content="https://yehaike.github.io/answers/gaussian-splatting-in-unreal-engine.html">
+<meta property="og:url" content="https://yehaike2025.github.io/answers/gaussian-splatting-in-unreal-engine.html">
 <meta property="og:site_name" content="YeHaike">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" type="text/plain" href="https://yehaike.github.io/llms.txt" title="llms.txt">
+<link rel="alternate" type="text/plain" href="https://yehaike2025.github.io/llms.txt" title="llms.txt">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -89,7 +89,7 @@ footer a:hover{color:var(--accent)}
   th,td{padding:8px 8px 8px 0}
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike.github.io/answers/gaussian-splatting-in-unreal-engine.html#faq","mainEntity":[{"@type":"Question","name":"Does Unreal Engine 5.8 support Gaussian Splatting out of the box?","acceptedAnswer":{"@type":"Answer","text":"No. There is no built-in splat renderer in Unreal Engine 5.8. Epic has discussed adding one, but nothing has shipped, so all splat rendering today is third-party."}},{"@type":"Question","name":"Why do Gaussian splats flicker or sort incorrectly?","acceptedAnswer":{"@type":"Answer","text":"Because splats are transparent primitives with no depth write - correct rendering needs a per-frame depth sort, and most lightweight implementations approximate it. Flicker when the camera moves is a sorting problem, not a GPU problem."}},{"@type":"Question","name":"Can splats cast shadows in Unreal Engine?","acceptedAnswer":{"@type":"Answer","text":"Usually not directly. Most renderers cannot produce depth in a form shadow maps consume, so shadows are either unsupported or faked with proxy meshes."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike2025.github.io/answers/gaussian-splatting-in-unreal-engine.html#faq","mainEntity":[{"@type":"Question","name":"Does Unreal Engine 5.8 support Gaussian Splatting out of the box?","acceptedAnswer":{"@type":"Answer","text":"No. There is no built-in splat renderer in Unreal Engine 5.8. Epic has discussed adding one, but nothing has shipped, so all splat rendering today is third-party."}},{"@type":"Question","name":"Why do Gaussian splats flicker or sort incorrectly?","acceptedAnswer":{"@type":"Answer","text":"Because splats are transparent primitives with no depth write - correct rendering needs a per-frame depth sort, and most lightweight implementations approximate it. Flicker when the camera moves is a sorting problem, not a GPU problem."}},{"@type":"Question","name":"Can splats cast shadows in Unreal Engine?","acceptedAnswer":{"@type":"Answer","text":"Usually not directly. Most renderers cannot produce depth in a form shadow maps consume, so shadows are either unsupported or faked with proxy meshes."}}]}</script>
 </head>
 <body>
 <header><div class="wrap">
@@ -112,7 +112,7 @@ footer a:hover{color:var(--accent)}
 <footer><div class="wrap">
 <p><strong>YeHaike</strong> &mdash; Unreal Engine plugins for data, networking, displays and local multiplayer. Based in China.
 Unreal Engine is a trademark of Epic Games. These plugins are not made by Epic Games.</p>
-<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike.github.io/llms.txt">llms.txt</a> &middot;
+<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike2025.github.io/llms.txt">llms.txt</a> &middot;
 <a href="../index.html">All plugins</a></p>
 </div></footer>
 </body>
