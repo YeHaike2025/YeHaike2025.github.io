@@ -1,0 +1,276 @@
+# YeHaike — full text
+
+Independent Unreal Engine plugin developer. Fourteen plugins covering SQLite, AES, TCP, UDP, HTTP, JSON, multi-window and multi-monitor output, split-screen, local multiplayer, runtime level transforms, procedural mesh, Blueprint graph export and rain shaders. All available on Fab.
+
+## SQLite Database for Unreal Engine 5 (HiSQLite3)
+
+Unreal Engine has no built-in SQLite support. The native options are SaveGame objects and DataTables, and neither can run a query. This plugin exposes SQLite directly to Blueprint: open or create a .db file, run CREATE / INSERT / SELECT / UPDATE, and read the result set back as arrays — all local, with no server to deploy.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Data & Networking.
+
+- Full CRUD from Blueprint — no C++ and no SQL string escaping work
+- Query results come back as arrays you can loop over directly
+- Database file ships inside the project; nothing to install on the target machine
+- Ships on Win64, Android, iOS, macOS and Linux
+
+URL: https://yehaike.github.io/p/sqlite.html
+
+## AES Encryption for Unreal Engine (UE-AES)
+
+Encryption in Unreal lives in C++ only. FAES exists in the engine source, but no part of it is exposed to Blueprint — which is why protecting a save file normally means writing a C++ helper or wiring OpenSSL by hand. This plugin adds Blueprint nodes that encrypt and decrypt strings, byte arrays and whole files, on every target platform.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Data & Networking.
+
+- Encrypt and decrypt strings, byte arrays and entire files
+- Protects save data and config files without touching OpenSSL
+- UTF-8 safe, so non-Latin text survives the round trip
+- No runtime dependency on the target machine
+
+URL: https://yehaike.github.io/p/aes-encryption.html
+
+## TCP Socket Client & Server for Unreal Engine (UE-TCP)
+
+Unreal's built-in networking is replication for multiplayer games. It is not a general-purpose socket layer, and Blueprint cannot open one. This plugin gives Blueprint raw TCP: connect as a client, run a listener as a server, and send or receive byte arrays — the shape you need for external tools, hardware and custom protocols.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Data & Networking.
+
+- Client and server in one plugin — listen inside the packaged game
+- Send and receive raw bytes, with callbacks on data arrival
+- Useful for hardware, robots, lab equipment and external tools
+- Runs on the game thread without blocking the frame
+
+URL: https://yehaike.github.io/p/tcp-socket.html
+
+## UDP Socket for Unreal Engine (UE-UDP)
+
+UDP is what sensors, phones and local tools usually speak, and Blueprint has no socket access at all. This plugin adds send, receive, broadcast and multicast nodes for UDP packets at runtime — the simplest way to talk to a device on the same network without writing a networking layer.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Data & Networking.
+
+- Send, receive, broadcast and multicast
+- Talks to sensors, phones, Arduino-class hardware and other apps
+- Low latency, no handshake, no connection state to manage
+- Pure Blueprint, no C++ required
+
+URL: https://yehaike.github.io/p/udp-socket.html
+
+## HTTP & REST API Calls in Unreal Engine (UE-Http)
+
+Blueprint has no native HTTP node. The engine's FHttpModule is C++ only, which is why “how do I call a REST API from Blueprint” remains one of the most asked Unreal questions. This plugin exposes GET, POST, PUT and DELETE with custom headers, JSON bodies and timeouts, with async callbacks so the game thread never stalls waiting on the network.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Data & Networking.
+
+- GET, POST, PUT and DELETE with custom headers
+- JSON request bodies and parsed responses
+- Async callbacks — the frame never freezes on a slow endpoint
+- Timeouts and status-code access for real error handling
+
+URL: https://yehaike.github.io/p/http-rest.html
+
+## JSON Parse & Write for Unreal Engine (JSON4UE)
+
+FJsonObject is C++ only, so reading an API response or a config file from Blueprint normally means writing a C++ helper first. This plugin parses and builds JSON entirely in Blueprint, including nested objects and arrays, so data returned by an API can be turned into Blueprint structs without leaving the graph.
+
+Engine: UE 5.0 – 5.8. Price: €16.35. Category: Data & Networking.
+
+- Parse responses with nested objects and arrays
+- Build JSON payloads for outgoing requests
+- Read config files without a C++ helper class
+- Natural companion to the HTTP plugin
+
+URL: https://yehaike.github.io/p/json.html
+
+## Multi-Window & Multi-Monitor for Unreal Engine (MultiWindows4UE)
+
+Unreal renders one viewport per window, and a second window means a second GameViewportClient — machinery the engine does not expose to Blueprint. This plugin opens additional OS windows at runtime, each bound to its own camera and output display, from the same build and the same game state. An instructor station, a debrief view or a control-room screen stops needing a second machine.
+
+Engine: UE 5.0 – 5.8. Price: €327. Category: Displays &amp; Multiplayer.
+
+- Independent runtime windows, one camera each, on the display you choose
+- Shares one game state — no sync layer between machines
+- Built for simulators, control rooms, exhibitions and arcade cabinets
+- Configured at runtime, so layouts can change per installation
+
+URL: https://yehaike.github.io/p/multi-window.html
+
+## Split-Screen & Multi-View for Unreal Engine (MultiViews4UE)
+
+The engine's split-screen is fixed at two players with a layout chosen by the GameMode, and changing it means editing C++. This plugin renders any number of cameras into one screen or into separate viewports, configured at runtime — split-screen co-op, a CCTV wall, replay angles or a minimap, without touching engine code.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Displays &amp; Multiplayer.
+
+- Any number of panes, not just two
+- Layouts configurable at runtime, per camera
+- Suits CCTV walls, replay angles and minimaps as well as co-op
+- No C++ and no GameMode surgery
+
+URL: https://yehaike.github.io/p/multi-view.html
+
+## Local Multiplayer for Unreal Engine (iLocalPlayer4UE)
+
+The engine supports local multiplayer, but adding a player mid-game with its own input device and camera requires GameMode configuration and C++. This plugin adds, removes and rebinds local players at runtime from Blueprint — the part that matters for couch co-op, arcade cabinets and party games where the number of players is not known until someone presses start.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Displays &amp; Multiplayer.
+
+- Add or remove local players at runtime
+- Each player gets its own input device and camera
+- No GameMode edits and no C++
+- Built for couch co-op, arcade and party games
+
+URL: https://yehaike.github.io/p/local-multiplayer.html
+
+## Runtime Level Transform for Unreal Engine (LevelController2)
+
+World Partition and level streaming are designed to load and unload, not to be moved. Transforming a whole level at runtime normally means reparenting every actor or building the world by hand. This plugin transforms whole levels and level streams — move, rotate, scale — while the game is running, which is what moving trains, elevators, rotating stations and procedural worlds actually need.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Editor &amp; World.
+
+- Transform entire levels and level streams at runtime
+- No per-actor reparenting
+- Built for moving vehicles, elevators and rotating structures
+- Works as the base for procedural world assembly
+
+URL: https://yehaike.github.io/p/level-transform.html
+
+## Blueprint Graph Screenshot for Unreal Engine (Blueprint Graph Screenshot)
+
+The Unreal editor has no way to export a Blueprint graph as an image. Every tutorial, every asset documentation page and every store listing ends up as a screenshot of a zoomed-out graph that nobody can read. This free plugin renders the full graph — or just a selection — to a PNG at the resolution you choose, which is the whole reason it exists.
+
+Engine: UE 5.0 – 5.8. Price: Free. Category: Editor &amp; World.
+
+- Exports the entire graph, not just the visible area
+- Selection-only export for close-ups
+- Resolution you choose — readable at print size
+- Free, and the easiest way to try the toolchain
+
+URL: https://yehaike.github.io/p/blueprint-graph-screenshot.html
+
+## Raindrops on Glass for Unreal Engine (RaindropsOnGlass)
+
+Rain on glass is usually faked with a scrolling normal map, which reads as a screen effect rather than weather. This provides drops that stick, slide and merge on windows and camera lenses, tunable at runtime and compatible with Lumen and post-process, so the effect survives a camera move.
+
+Engine: UE 5.0 – 5.8. Price: €54.52. Category: Rendering &amp; VFX.
+
+- Drops stick, slide and merge rather than scrolling
+- Works on both windows and camera lenses
+- Compatible with Lumen and post-process
+- Parameters tweakable at runtime
+
+URL: https://yehaike.github.io/p/raindrops-on-glass.html
+
+## Gaussian Splatting for Unreal Engine (UEGaussianSplatting)
+
+Unreal Engine has no built-in Gaussian Splatting support. This plugin was an early attempt to close that gap: bring a .ply splat capture into the editor and render it in-engine instead of as a mesh. It is a legacy implementation, and the page below says so plainly — if you are starting a splat project today, read the comparison before you buy.
+
+Engine: UE 5.0 – 5.8. Price: €163.62. Category: Rendering &amp; VFX.
+
+- Imports <code>.ply</code> splat files as editor assets
+- Renders splats as a placeable actor you can move and frame
+- Useful for scans, exhibition content and previsualisation
+- Kept available for projects that already depend on it
+
+URL: https://yehaike.github.io/p/gaussian-splatting.html
+
+## Math Expression Procedural Mesh for Unreal Engine (UEMathExpressionProceduralMesh)
+
+ProceduralMeshComponent gives you vertices and triangles. It does not give you a formula. This plugin evaluates a math expression into geometry — parametric surfaces, curves and projectile trajectories — with live parameter tweaking in the editor, so a shape can be tuned without recompiling or rebuilding a mesh by hand.
+
+Engine: UE 5.0 – 5.8. Price: €109. Category: Editor &amp; World.
+
+- Evaluate a math expression into a procedural mesh
+- Parametric surfaces, curves and trajectories
+- Adjust parameters live in the editor
+- Useful for technical visualisation, projection surfaces and motion paths
+
+URL: https://yehaike.github.io/p/math-expression-mesh.html
+
+## How do I open a second window in Unreal Engine?
+
+You cannot open a second game window from Blueprint. Unreal renders one viewport per window, and a second window requires a second GameViewportClient created in C++. The engine exposes no node, setting or project option that spawns one.
+
+Q: Can I open a second window in Blueprint only?
+A: No. There is no Blueprint node that creates a game window. Every route — C++, nDisplay or a plugin — ultimately creates an additional viewport client in native code.
+
+Q: Does the editor's “New Editor Window” help?
+A: Only inside the editor. It cannot be used in a packaged build, so it is not a shipping solution.
+
+Q: Does a second window mean a second copy of the game?
+A: No, if it is implemented as an additional viewport in the same process. Both windows share one game state, which is the entire reason to do it this way instead of adding a second PC.
+
+URL: https://yehaike.github.io/answers/multiple-windows-in-unreal-engine.html
+
+## How do I output Unreal Engine to multiple monitors?
+
+Moving an Unreal window onto a second monitor is an operating-system operation, not an engine feature. Getting a different camera to render on that monitor is the hard part, and it is where every option below differs.
+
+Q: Can Unreal render two different cameras on two monitors from one PC?
+A: Not out of the box. The engine renders one viewport per window, so a second camera on a second display requires a second viewport client, an nDisplay config, or a plugin.
+
+Q: Is NVIDIA Surround the same as multi-monitor support?
+A: No. Surround merges the displays into a single logical desktop so one window can span them. It does not give you independent views.
+
+Q: Does this work in a packaged build?
+A: With a plugin, yes — that is the main reason to use one. Editor-only window features do not survive packaging.
+
+URL: https://yehaike.github.io/answers/multi-monitor-output-unreal-engine.html
+
+## How do I use SQLite in Unreal Engine?
+
+Unreal Engine has no built-in SQLite support. Persistence is handled by USaveGame objects and DataTables, and neither can run a query. If you need SQL, you are choosing between writing a C++ wrapper and using a plugin.
+
+Q: Is there an official SQLite plugin from Epic?
+A: No. There is no first-party SQLite integration in Unreal Engine; persistence is SaveGame and DataTable.
+
+Q: Can I use SQLite from Blueprint?
+A: Not natively. It requires a C++ wrapper or a plugin that exposes the API to Blueprint.
+
+Q: Does a SQLite database need a server?
+A: No. SQLite is a single file on disk, which is why it suits offline games, installations and kiosks. There is no daemon and no connection string.
+
+URL: https://yehaike.github.io/answers/sqlite-in-unreal-engine.html
+
+## How do I make an HTTP request from Blueprint in Unreal Engine?
+
+There is no HTTP node in Blueprint. The engine's HTTP client is FHttpModule, a C++ module, and Epic has never exposed it to the graph — which is why this is one of the most asked Unreal questions on every forum.
+
+Q: Is there a built-in Blueprint node for HTTP?
+A: No. Unreal ships no Blueprint-exposed HTTP client; the functionality exists only in C++ through FHttpModule.
+
+Q: Can I call a REST API from Blueprint without C++?
+A: Only with a plugin. Some are free, some are paid; check that they support your engine version before relying on one.
+
+Q: Will an HTTP request freeze my game?
+A: A correctly written one will not — the engine's client is asynchronous. Freezes come from waiting on the result synchronously, which is a code problem rather than an engine one.
+
+URL: https://yehaike.github.io/answers/http-request-in-unreal-blueprint.html
+
+## How do I encrypt a save game in Unreal Engine?
+
+Save files written by USaveGame are plain binary — openable, editable and shareable. The engine does contain AES (FAES in Misc/AES.h), but none of it is exposed to Blueprint, so encrypting a save normally means writing a C++ helper.
+
+Q: Are Unreal save games encrypted by default?
+A: No. USaveGame serialises to a plain binary file; anyone can open it with a hex editor.
+
+Q: Can I use AES from Blueprint?
+A: Not natively. FAES is C++ only, so Blueprint encryption requires a plugin or a C++ helper function you expose yourself.
+
+Q: Is encrypting the save file enough to stop cheating?
+A: No. It stops casual editing. Anything that runs on the player's machine can eventually be reverse engineered — keep authoritative values on a server if cheating matters.
+
+URL: https://yehaike.github.io/answers/encrypt-save-game-unreal-engine.html
+
+## Is there Gaussian Splatting support in Unreal Engine?
+
+Not natively. As of Unreal Engine 5.8 there is no built-in 3D Gaussian Splatting renderer — any splat rendering comes from a plugin. And the plugins differ far more than their feature lists suggest: the implementation approach fixes your scene-size ceiling before anything else does.
+
+Q: Does Unreal Engine 5.8 support Gaussian Splatting out of the box?
+A: No. There is no built-in splat renderer in Unreal Engine 5.8. Epic has discussed adding one, but nothing has shipped, so all splat rendering today is third-party.
+
+Q: Why do Gaussian splats flicker or sort incorrectly?
+A: Because splats are transparent primitives with no depth write — correct rendering needs a per-frame depth sort, and most lightweight implementations approximate it. Flicker when the camera moves is a sorting problem, not a GPU problem.
+
+Q: Can splats cast shadows in Unreal Engine?
+A: Usually not directly. Most renderers cannot produce depth in a form shadow maps consume, so shadows are either unsupported or faked with proxy meshes.
+
+URL: https://yehaike.github.io/answers/gaussian-splatting-in-unreal-engine.html
+

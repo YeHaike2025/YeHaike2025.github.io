@@ -1,0 +1,43 @@
+# YeHaike
+
+> Independent Unreal Engine plugin developer. Fourteen plugins covering SQLite, AES, TCP, UDP, HTTP, JSON, multi-window and multi-monitor output, split-screen, local multiplayer, runtime level transforms, procedural mesh, Blueprint graph export and rain shaders. All available on Fab.
+
+All plugins are sold on Fab: https://www.fab.com/sellers/YeHaike
+Each product page states the engine's built-in alternative before describing the plugin.
+
+## Plugins
+
+- [SQLite Database for Unreal Engine 5 (HiSQLite3)](https://yehaike.github.io/p/sqlite.html): Read, write and query a real SQLite database from Blueprint. Persistent game data, no server. €54.52. UE 5.0 – 5.8.
+- [AES Encryption for Unreal Engine (UE-AES)](https://yehaike.github.io/p/aes-encryption.html): Encrypt and decrypt strings, byte arrays and whole files with AES, from Blueprint. €54.52. UE 5.0 – 5.8.
+- [TCP Socket Client & Server for Unreal Engine (UE-TCP)](https://yehaike.github.io/p/tcp-socket.html): Open TCP connections from Blueprint: connect, send, receive, or run a listener inside the game. €54.52. UE 5.0 – 5.8.
+- [UDP Socket for Unreal Engine (UE-UDP)](https://yehaike.github.io/p/udp-socket.html): Send and receive UDP packets from Blueprint, including broadcast and multicast. €54.52. UE 5.0 – 5.8.
+- [HTTP & REST API Calls in Unreal Engine (UE-Http)](https://yehaike.github.io/p/http-rest.html): Call any REST API from Blueprint: GET, POST, PUT, DELETE, headers, JSON bodies, timeouts. €54.52. UE 5.0 – 5.8.
+- [JSON Parse & Write for Unreal Engine (JSON4UE)](https://yehaike.github.io/p/json.html): Parse and build JSON from Blueprint, including nested objects and arrays. €16.35. UE 5.0 – 5.8.
+- [Multi-Window & Multi-Monitor for Unreal Engine (MultiWindows4UE)](https://yehaike.github.io/p/multi-window.html): Spawn and control additional OS windows at runtime, each rendering its own camera on its own monitor. €327. UE 5.0 – 5.8.
+- [Split-Screen & Multi-View for Unreal Engine (MultiViews4UE)](https://yehaike.github.io/p/multi-view.html): Render multiple cameras into one screen or separate viewports: split-screen, CCTV walls, replays. €54.52. UE 5.0 – 5.8.
+- [Local Multiplayer for Unreal Engine (iLocalPlayer4UE)](https://yehaike.github.io/p/local-multiplayer.html): Add a second, third or fourth local player at runtime with their own input device and camera. €54.52. UE 5.0 – 5.8.
+- [Runtime Level Transform for Unreal Engine (LevelController2)](https://yehaike.github.io/p/level-transform.html): Move, rotate and scale entire levels or level streams while the game is running. €54.52. UE 5.0 – 5.8.
+- [Blueprint Graph Screenshot for Unreal Engine (Blueprint Graph Screenshot)](https://yehaike.github.io/p/blueprint-graph-screenshot.html): Export a whole Blueprint graph, or a selection, to a high-resolution PNG. Free. UE 5.0 – 5.8.
+- [Raindrops on Glass for Unreal Engine (RaindropsOnGlass)](https://yehaike.github.io/p/raindrops-on-glass.html): Physically-based raindrops that stick, slide and merge on windows and camera lenses. €54.52. UE 5.0 – 5.8.
+- [Gaussian Splatting for Unreal Engine (UEGaussianSplatting)](https://yehaike.github.io/p/gaussian-splatting.html): Import PLY splat scans and render them in-engine as a placeable actor. €163.62. UE 5.0 – 5.8.
+- [Math Expression Procedural Mesh for Unreal Engine (UEMathExpressionProceduralMesh)](https://yehaike.github.io/p/math-expression-mesh.html): Turn a math formula into geometry: parametric surfaces, curves and trajectories at runtime. €109. UE 5.0 – 5.8.
+
+## Answers
+
+- [How do I open a second window in Unreal Engine?](https://yehaike.github.io/answers/multiple-windows-in-unreal-engine.html): Unreal renders one viewport per window. A second window needs a second GameViewportClient in C++ — here are the built-in options and what each one actually gives you.
+- [How do I output Unreal Engine to multiple monitors?](https://yehaike.github.io/answers/multi-monitor-output-unreal-engine.html): Windowed mode, NVIDIA Surround, nDisplay or a runtime multi-window plugin. What each option actually does when you need Unreal on more than one display.
+- [How do I use SQLite in Unreal Engine?](https://yehaike.github.io/answers/sqlite-in-unreal-engine.html): Unreal has no SQLite integration. Compare SaveGame, DataTable and a real SQLite plugin, and decide which one your project actually needs.
+- [How do I make an HTTP request from Blueprint in Unreal Engine?](https://yehaike.github.io/answers/http-request-in-unreal-blueprint.html): Blueprint has no HTTP node and FHttpModule is C++ only. Here is the C++ route, when a plugin is the better trade, and the pitfalls of both.
+- [How do I encrypt a save game in Unreal Engine?](https://yehaike.github.io/answers/encrypt-save-game-unreal-engine.html): FAES exists in C++ but is not exposed to Blueprint. How to encrypt save data, where to keep the key, and why a shipped key is not secrecy.
+- [Is there Gaussian Splatting support in Unreal Engine?](https://yehaike.github.io/answers/gaussian-splatting-in-unreal-engine.html): Unreal Engine 5.8 has no built-in 3D Gaussian Splatting renderer. Compare the three implementation approaches and the checks that decide whether a splat plugin survives production.
+
+## Notes
+
+- Licence: standard Fab licence for use in your own projects. Shipping a plugin inside a
+  product delivered to third parties requires a separate OEM licence.
+- Support and version support questions: see the individual product page.
+
+## Contact
+
+- Fab store: https://www.fab.com/sellers/YeHaike
+- GitHub: https://github.com/YeHaike

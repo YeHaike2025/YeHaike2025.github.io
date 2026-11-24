@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YeHaike — Unreal Engine plugins for data, networking and displays</title>
+<meta name="description" content="Independent Unreal Engine plugin developer. Fourteen plugins covering SQLite, AES, TCP, UDP, HTTP, JSON, multi-window and multi-monitor output, split-screen, local multiplayer, runtime level transforms, procedural mesh, Blueprint graph export and rain shaders. All available on Fab.">
+<link rel="canonical" href="https://yehaike.github.io/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YeHaike — Unreal Engine plugins for data, networking and displays">
+<meta property="og:description" content="Independent Unreal Engine plugin developer. Fourteen plugins covering SQLite, AES, TCP, UDP, HTTP, JSON, multi-window and multi-monitor output, split-screen, local multiplayer, runtime level transforms, procedural mesh, Blueprint graph export and rain shaders. All available on Fab.">
+<meta property="og:url" content="https://yehaike.github.io/">
+<meta property="og:site_name" content="YeHaike">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" href="https://yehaike.github.io/llms.txt" title="llms.txt">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#14161a;--mid:#5b616b;--soft:#8a9099;--line:#e3e5e8;
+  --bg:#ffffff;--panel:#f7f8f7;--accent:#1f4b8f;--accent-soft:#eef3fa;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);padding:16px 0}
+header .wrap{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header a.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink);font-size:16px}
+header nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+header nav a{color:var(--mid);text-decoration:none}
+header nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.22;letter-spacing:-.022em;margin:0 0 14px;font-weight:700}
+h2{font-size:19px;line-height:1.3;letter-spacing:-.012em;margin:34px 0 12px;font-weight:700}
+h3{font-size:16px;margin:22px 0 8px;font-weight:650}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--panel);padding:2px 5px;border-radius:4px;border:1px solid var(--line)}
+.lead{font-size:18px;line-height:1.6;color:#2b3038}
+.lead strong{color:var(--ink)}
+.kicker{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 12px;font-weight:650}
+.crumb{font-size:13px;color:var(--soft);margin:0 0 18px}
+.crumb a{color:var(--soft);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:22px 0}
+.panel h2{margin-top:0;font-size:16px}
+dl.spec{display:grid;grid-template-columns:112px 1fr;gap:8px 16px;margin:22px 0;font-size:14.5px}
+dl.spec dt{color:var(--soft);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px;font-weight:650}
+dl.spec dd{margin:0}
+ul.tight{padding-left:20px;margin:0 0 14px}
+ul.tight li{margin:0 0 8px}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-weight:650;border-bottom:1.5px solid #cfd3d8}
+td:first-child{width:31%}
+.cta{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;
+  padding:12px 20px;border-radius:6px;font-weight:600;font-size:15px;margin:6px 8px 6px 0}
+.cta:hover{background:#000}
+.cta.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.cta.ghost:hover{background:var(--panel)}
+.price{font-size:15px;color:var(--mid);margin-left:2px}
+.notice{border:1px solid #e6d3b3;background:#fdf9f1;border-radius:8px;padding:14px 18px;margin:20px 0;font-size:14.5px;color:#5c4a2a}
+.notice strong{color:#3f3018}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:650;
+  padding:2px 7px;border-radius:3px;background:#fdf1dc;color:#7a5a1e;margin-left:8px;vertical-align:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px 18px;text-decoration:none;color:inherit;display:block}
+.card:hover{border-color:#b9c0c9;background:#fcfcfb}
+.card h3{margin:0 0 6px;font-size:15.5px;letter-spacing:-.008em}
+.card p{margin:0;font-size:13.5px;color:var(--mid);line-height:1.5}
+.card .p{display:block;margin-top:9px;font-size:12.5px;color:var(--soft)}
+details{border-bottom:1px solid var(--line);padding:12px 0}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin:10px 0 0;color:#33383f;font-size:14.5px}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:24px 0 40px;font-size:13px;color:var(--soft)}
+footer a{color:var(--mid);text-decoration:none}
+footer a:hover{color:var(--accent)}
+@media(max-width:640px){
+  h1{font-size:25px}.lead{font-size:16.5px}
+  .grid{grid-template-columns:1fr}
+  dl.spec{grid-template-columns:1fr;gap:2px 0}
+  dl.spec dd{margin-bottom:10px}
+  td:first-child{width:auto}
+  table{font-size:13.5px}
+  th,td{padding:8px 8px 8px 0}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://yehaike.github.io/#org","name":"YeHaike","url":"https://yehaike.github.io/","description":"Independent Unreal Engine plugin developer. Fourteen plugins covering SQLite, AES, TCP, UDP, HTTP, JSON, multi-window and multi-monitor output, split-screen, local multiplayer, runtime level transforms, procedural mesh, Blueprint graph export and rain shaders. All available on Fab.","sameAs":["https://www.fab.com/sellers/YeHaike","https://github.com/YeHaike"],"brand":{"@type":"Brand","name":"YeHaike"}}</script>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="../index.html">YeHaike</a>
+<nav>
+<a href="../index.html#plugins">Plugins</a>
+<a href="../index.html#answers">Answers</a>
+<a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a>
+</nav>
+</div></header>
+<main><div class="wrap">
+<p class="kicker">Independent Unreal Engine plugin developer</p>
+<h1>Unreal Engine plugins for data, networking, displays and local multiplayer</h1>
+<p class="lead">14 plugins for the gaps the engine leaves open: <strong>no SQLite</strong>, <strong>no Blueprint HTTP</strong>,
+<strong>no second window</strong>, <strong>no runtime local players</strong>. Each page below states the engine's built-in
+alternative first, then what the plugin adds &mdash; so you can tell whether you need it at all.</p>
+<div class="panel">
+<h2>How to read this site</h2>
+<p>Every plugin page starts with the gap in the engine, not the feature list. If the built-in option solves your
+problem, the page says so and you should use it. Plugins are listed by the name buyers search for, with the
+original name in brackets.</p>
+<p class="price">All products are sold on Fab. Prices shown in euro; regional pricing applies at checkout.</p>
+</div>
+<h2 id="plugins">Plugins</h2>
+<h2>Data & Networking</h2><div class="grid"><a class="card" href="p/sqlite.html"><h3>SQLite Database for Unreal Engine 5</h3><p>Read, write and query a real SQLite database from Blueprint. Persistent game data, no server.</p><span class="p">HiSQLite3 &middot; €54.52</span></a><a class="card" href="p/aes-encryption.html"><h3>AES Encryption for Unreal Engine</h3><p>Encrypt and decrypt strings, byte arrays and whole files with AES, from Blueprint.</p><span class="p">UE-AES &middot; €54.52</span></a><a class="card" href="p/tcp-socket.html"><h3>TCP Socket Client &amp; Server for Unreal Engine</h3><p>Open TCP connections from Blueprint: connect, send, receive, or run a listener inside the game.</p><span class="p">UE-TCP &middot; €54.52</span></a><a class="card" href="p/udp-socket.html"><h3>UDP Socket for Unreal Engine</h3><p>Send and receive UDP packets from Blueprint, including broadcast and multicast.</p><span class="p">UE-UDP &middot; €54.52</span></a><a class="card" href="p/http-rest.html"><h3>HTTP &amp; REST API Calls in Unreal Engine</h3><p>Call any REST API from Blueprint: GET, POST, PUT, DELETE, headers, JSON bodies, timeouts.</p><span class="p">UE-Http &middot; €54.52</span></a><a class="card" href="p/json.html"><h3>JSON Parse &amp; Write for Unreal Engine</h3><p>Parse and build JSON from Blueprint, including nested objects and arrays.</p><span class="p">JSON4UE &middot; €16.35</span></a></div><h2>Displays &amp; Multiplayer</h2><div class="grid"><a class="card" href="p/multi-window.html"><h3>Multi-Window &amp; Multi-Monitor for Unreal Engine</h3><p>Spawn and control additional OS windows at runtime, each rendering its own camera on its own monitor.</p><span class="p">MultiWindows4UE &middot; €327</span></a><a class="card" href="p/multi-view.html"><h3>Split-Screen &amp; Multi-View for Unreal Engine</h3><p>Render multiple cameras into one screen or separate viewports: split-screen, CCTV walls, replays.</p><span class="p">MultiViews4UE &middot; €54.52</span></a><a class="card" href="p/local-multiplayer.html"><h3>Local Multiplayer for Unreal Engine</h3><p>Add a second, third or fourth local player at runtime with their own input device and camera.</p><span class="p">iLocalPlayer4UE &middot; €54.52</span></a></div><h2>Editor &amp; World</h2><div class="grid"><a class="card" href="p/level-transform.html"><h3>Runtime Level Transform for Unreal Engine</h3><p>Move, rotate and scale entire levels or level streams while the game is running.</p><span class="p">LevelController2 &middot; €54.52</span></a><a class="card" href="p/blueprint-graph-screenshot.html"><h3>Blueprint Graph Screenshot for Unreal Engine</h3><p>Export a whole Blueprint graph, or a selection, to a high-resolution PNG.</p><span class="p">Blueprint Graph Screenshot &middot; Free</span></a><a class="card" href="p/math-expression-mesh.html"><h3>Math Expression Procedural Mesh for Unreal Engine<span class="tag">Read first</span></h3><p>Turn a math formula into geometry: parametric surfaces, curves and trajectories at runtime.</p><span class="p">UEMathExpressionProceduralMesh &middot; €109</span></a></div><h2>Rendering &amp; VFX</h2><div class="grid"><a class="card" href="p/raindrops-on-glass.html"><h3>Raindrops on Glass for Unreal Engine</h3><p>Physically-based raindrops that stick, slide and merge on windows and camera lenses.</p><span class="p">RaindropsOnGlass &middot; €54.52</span></a><a class="card" href="p/gaussian-splatting.html"><h3>Gaussian Splatting for Unreal Engine<span class="tag">Legacy</span></h3><p>Import PLY splat scans and render them in-engine as a placeable actor.</p><span class="p">UEGaussianSplatting &middot; €163.62</span></a></div>
+<h2 id="answers">Questions worth answering properly</h2>
+<p>These are the questions that decide whether you need a plugin at all. Each answer is written to be useful on its
+own, including when the answer is &ldquo;use the built-in feature&rdquo;.</p>
+<div class="grid"><a class="card" href="answers/multiple-windows-in-unreal-engine.html"><h3>How do I open a second window in Unreal Engine?</h3><p>Unreal renders one viewport per window. A second window needs a second GameViewportClient in C++ — here are the built-in options and what each one actually gives you.</p></a><a class="card" href="answers/multi-monitor-output-unreal-engine.html"><h3>How do I output Unreal Engine to multiple monitors?</h3><p>Windowed mode, NVIDIA Surround, nDisplay or a runtime multi-window plugin. What each option actually does when you need Unreal on more than one display.</p></a><a class="card" href="answers/sqlite-in-unreal-engine.html"><h3>How do I use SQLite in Unreal Engine?</h3><p>Unreal has no SQLite integration. Compare SaveGame, DataTable and a real SQLite plugin, and decide which one your project actually needs.</p></a><a class="card" href="answers/http-request-in-unreal-blueprint.html"><h3>How do I make an HTTP request from Blueprint in Unreal Engine?</h3><p>Blueprint has no HTTP node and FHttpModule is C++ only. Here is the C++ route, when a plugin is the better trade, and the pitfalls of both.</p></a><a class="card" href="answers/encrypt-save-game-unreal-engine.html"><h3>How do I encrypt a save game in Unreal Engine?</h3><p>FAES exists in C++ but is not exposed to Blueprint. How to encrypt save data, where to keep the key, and why a shipped key is not secrecy.</p></a><a class="card" href="answers/gaussian-splatting-in-unreal-engine.html"><h3>Is there Gaussian Splatting support in Unreal Engine?</h3><p>Unreal Engine 5.8 has no built-in 3D Gaussian Splatting renderer. Compare the three implementation approaches and the checks that decide whether a splat plugin survives production.</p></a></div>
+<h2>About</h2>
+<p>YeHaike is an independent developer shipping Unreal Engine plugins since the UE4 Marketplace era.
+The catalogue is deliberately narrow: data and networking, displays and local multiplayer, editor tooling, and one
+rendering effect. Nothing here changes the render pipeline in a way that breaks on engine upgrades.</p>
+<p><a class="cta" href="https://www.fab.com/sellers/YeHaike" rel="noopener">Browse the Fab store</a></p>
+</div></main>
+<footer><div class="wrap">
+<p><strong>YeHaike</strong> &mdash; Unreal Engine plugins for data, networking, displays and local multiplayer. Based in China.
+Unreal Engine is a trademark of Epic Games. These plugins are not made by Epic Games.</p>
+<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike.github.io/llms.txt">llms.txt</a> &middot;
+<a href="../index.html">All plugins</a></p>
+</div></footer>
+</body>
+</html>

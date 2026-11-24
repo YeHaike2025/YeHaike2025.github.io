@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unreal Engine Multi-Monitor Output: Four Ways, and What Each One Costs</title>
+<meta name="description" content="Windowed mode, NVIDIA Surround, nDisplay or a runtime multi-window plugin. What each option actually does when you need Unreal on more than one display.">
+<link rel="canonical" href="https://yehaike.github.io/answers/multi-monitor-output-unreal-engine.html">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unreal Engine Multi-Monitor Output: Four Ways, and What Each One Costs">
+<meta property="og:description" content="Windowed mode, NVIDIA Surround, nDisplay or a runtime multi-window plugin. What each option actually does when you need Unreal on more than one display.">
+<meta property="og:url" content="https://yehaike.github.io/answers/multi-monitor-output-unreal-engine.html">
+<meta property="og:site_name" content="YeHaike">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" href="https://yehaike.github.io/llms.txt" title="llms.txt">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#14161a;--mid:#5b616b;--soft:#8a9099;--line:#e3e5e8;
+  --bg:#ffffff;--panel:#f7f8f7;--accent:#1f4b8f;--accent-soft:#eef3fa;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);padding:16px 0}
+header .wrap{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header a.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink);font-size:16px}
+header nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+header nav a{color:var(--mid);text-decoration:none}
+header nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.22;letter-spacing:-.022em;margin:0 0 14px;font-weight:700}
+h2{font-size:19px;line-height:1.3;letter-spacing:-.012em;margin:34px 0 12px;font-weight:700}
+h3{font-size:16px;margin:22px 0 8px;font-weight:650}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--panel);padding:2px 5px;border-radius:4px;border:1px solid var(--line)}
+.lead{font-size:18px;line-height:1.6;color:#2b3038}
+.lead strong{color:var(--ink)}
+.kicker{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 12px;font-weight:650}
+.crumb{font-size:13px;color:var(--soft);margin:0 0 18px}
+.crumb a{color:var(--soft);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:22px 0}
+.panel h2{margin-top:0;font-size:16px}
+dl.spec{display:grid;grid-template-columns:112px 1fr;gap:8px 16px;margin:22px 0;font-size:14.5px}
+dl.spec dt{color:var(--soft);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px;font-weight:650}
+dl.spec dd{margin:0}
+ul.tight{padding-left:20px;margin:0 0 14px}
+ul.tight li{margin:0 0 8px}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-weight:650;border-bottom:1.5px solid #cfd3d8}
+td:first-child{width:31%}
+.cta{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;
+  padding:12px 20px;border-radius:6px;font-weight:600;font-size:15px;margin:6px 8px 6px 0}
+.cta:hover{background:#000}
+.cta.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.cta.ghost:hover{background:var(--panel)}
+.price{font-size:15px;color:var(--mid);margin-left:2px}
+.notice{border:1px solid #e6d3b3;background:#fdf9f1;border-radius:8px;padding:14px 18px;margin:20px 0;font-size:14.5px;color:#5c4a2a}
+.notice strong{color:#3f3018}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:650;
+  padding:2px 7px;border-radius:3px;background:#fdf1dc;color:#7a5a1e;margin-left:8px;vertical-align:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px 18px;text-decoration:none;color:inherit;display:block}
+.card:hover{border-color:#b9c0c9;background:#fcfcfb}
+.card h3{margin:0 0 6px;font-size:15.5px;letter-spacing:-.008em}
+.card p{margin:0;font-size:13.5px;color:var(--mid);line-height:1.5}
+.card .p{display:block;margin-top:9px;font-size:12.5px;color:var(--soft)}
+details{border-bottom:1px solid var(--line);padding:12px 0}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin:10px 0 0;color:#33383f;font-size:14.5px}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:24px 0 40px;font-size:13px;color:var(--soft)}
+footer a{color:var(--mid);text-decoration:none}
+footer a:hover{color:var(--accent)}
+@media(max-width:640px){
+  h1{font-size:25px}.lead{font-size:16.5px}
+  .grid{grid-template-columns:1fr}
+  dl.spec{grid-template-columns:1fr;gap:2px 0}
+  dl.spec dd{margin-bottom:10px}
+  td:first-child{width:auto}
+  table{font-size:13.5px}
+  th,td{padding:8px 8px 8px 0}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://yehaike.github.io/answers/multi-monitor-output-unreal-engine.html#faq","mainEntity":[{"@type":"Question","name":"Can Unreal render two different cameras on two monitors from one PC?","acceptedAnswer":{"@type":"Answer","text":"Not out of the box. The engine renders one viewport per window, so a second camera on a second display requires a second viewport client, an nDisplay config, or a plugin."}},{"@type":"Question","name":"Is NVIDIA Surround the same as multi-monitor support?","acceptedAnswer":{"@type":"Answer","text":"No. Surround merges the displays into a single logical desktop so one window can span them. It does not give you independent views."}},{"@type":"Question","name":"Does this work in a packaged build?","acceptedAnswer":{"@type":"Answer","text":"With a plugin, yes - that is the main reason to use one. Editor-only window features do not survive packaging."}}]}</script>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="../index.html">YeHaike</a>
+<nav>
+<a href="../index.html#plugins">Plugins</a>
+<a href="../index.html#answers">Answers</a>
+<a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a>
+</nav>
+</div></header>
+<main><div class="wrap">
+<p class="crumb"><a href="../index.html">Home</a> / <a href="../index.html#answers">Answers</a> / How do I output Unreal Engine to multiple monitors?</p>
+<h1>How do I output Unreal Engine to multiple monitors?</h1>
+<p class="lead">Moving an Unreal window onto a second monitor is an operating-system operation, not an engine feature. Getting a <strong>different camera</strong> to render on that monitor is the hard part, and it is where every option below differs.</p>
+<h2>The four options</h2><table><thead><tr><th>Approach</th><th>Different camera per screen?</th><th>Typical cost</th></tr></thead><tbody><tr><td>Windowed mode, window dragged to screen 2</td><td>No &mdash; same view</td><td>Free</td></tr><tr><td>NVIDIA Surround / AMD Eyefinity</td><td>No &mdash; the OS fuses the screens into one wide desktop</td><td>Free, needs matching resolutions</td></tr><tr><td>nDisplay</td><td>Yes, via a cluster config</td><td>Setup time, config files, fixed layout</td></tr><tr><td>Runtime multi-window plugin</td><td>Yes, set at runtime</td><td>Plugin licence</td></tr></tbody></table><h2>Why Surround is usually the wrong answer</h2><p>Surround makes three monitors behave like one very wide monitor. The engine still renders a single viewport, so you get one enormous camera &mdash; not an instructor view, not a debrief view. If your goal is a wraparound cockpit window, Surround is fine. If your goal is two different pictures, it is the opposite of what you need.</p><h2>What to check before you buy anything</h2><ul class="tight"><li>Does each screen need its own camera, or the same camera stretched?</li><li>Does the layout have to change at the installation site, without a rebuild?</li><li>Is a second PC already in the bill of materials? If yes, the software is competing with a workstation, not with free.</li></ul><h2>The plugin route</h2><p>See <a href="../p/multi-window.html">Multi-Window &amp; Multi-Monitor</a> for runtime windows with independent cameras. For several cameras packed into one screen &mdash; a CCTV wall or split-screen &mdash; <a href="../p/multi-view.html">Split-Screen &amp; Multi-View</a> is the smaller tool.</p>
+<div class="panel"><h2>If you want it without the engine work</h2><p><a href="../p/multi-window.html">Multi-Window &amp; Multi-Monitor for Unreal Engine</a> &mdash; Spawn and control additional OS windows at runtime, each rendering its own camera on its own monitor.</p><a class="cta" href="https://www.fab.com/listings/b5c2994e-549a-490c-8062-4f01c1307e22" rel="noopener">See it on Fab &mdash; €327</a></div>
+<h2>Common questions</h2>
+<details><summary>Can Unreal render two different cameras on two monitors from one PC?</summary><p>Not out of the box. The engine renders one viewport per window, so a second camera on a second display requires a second viewport client, an nDisplay config, or a plugin.</p></details><details><summary>Is NVIDIA Surround the same as multi-monitor support?</summary><p>No. Surround merges the displays into a single logical desktop so one window can span them. It does not give you independent views.</p></details><details><summary>Does this work in a packaged build?</summary><p>With a plugin, yes &mdash; that is the main reason to use one. Editor-only window features do not survive packaging.</p></details>
+</div></main>
+<footer><div class="wrap">
+<p><strong>YeHaike</strong> &mdash; Unreal Engine plugins for data, networking, displays and local multiplayer. Based in China.
+Unreal Engine is a trademark of Epic Games. These plugins are not made by Epic Games.</p>
+<p><a href="https://www.fab.com/sellers/YeHaike" rel="noopener">Fab store</a> &middot; <a href="https://yehaike.github.io/llms.txt">llms.txt</a> &middot;
+<a href="../index.html">All plugins</a></p>
+</div></footer>
+</body>
+</html>
